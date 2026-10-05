@@ -6,7 +6,7 @@ import Link from "next/link";
 const NAV_ITEMS = [
   { label: "History", href: "/history" },
   { label: "About", href: "/about" },
-  { label: "Changelog", href: "/changelog" },
+  { label: "Login", href: "/login" },
 ];
 
 /**
@@ -73,7 +73,7 @@ const Navbar = () => {
             <span className="text-[16px] font-semibold uppercase tracking-[0.2em]">
               Shortlink
             </span>
-            <span className="mt-1 font-mono text-[9px] uppercase tracking-[0.28em] text-shell-muted">
+            <span className="mt-1 font-mono text-[11px] uppercase tracking-[0.28em] text-shell-muted">
               URL shortener
             </span>
           </span>
@@ -89,7 +89,7 @@ const Navbar = () => {
               >
                 <Link
                   href={item.href}
-                  className="flex items-center px-4 text-[12px] font-medium uppercase tracking-[0.14em] text-shell-muted transition-colors duration-200 hover:text-shell-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-brass"
+                  className="flex items-center px-4 text-[14px] font-medium uppercase tracking-[0.14em] text-shell-muted transition-colors duration-200 hover:text-shell-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-brass"
                 >
                   {item.label}
                 </Link>
