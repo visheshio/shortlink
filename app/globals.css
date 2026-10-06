@@ -115,3 +115,72 @@ body {
     transition: none !important;
   }
 }
+
+/* ── Hero visual: home.png blended into the instrument palette ─────
+   The container carries a brass→graphite gradient; the photo is laid
+   over it in `luminosity` so it picks up the duotone, then a brass
+   wash, a scanline grain and a hairline frame sit on top. The frame
+   and gradient render even if /home.png has not been added yet.    */
+
+.hero-visual {
+  background:
+    radial-gradient(
+      120% 120% at 80% 0%,
+      color-mix(in oklab, var(--brass) 24%, transparent),
+      transparent 60%
+    ),
+    var(--shell);
+  border: 1px solid var(--rule);
+}
+
+.hero-visual__img {
+  mix-blend-mode:darken;
+  opacity: 0.92;
+}
+
+.hero-visual__tint {
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--brass) 38%, transparent),
+    transparent 45%,
+    color-mix(in oklab, var(--shell-ink) 55%, transparent)
+  );
+  mix-blend-mode: overlay;
+}
+
+.hero-visual__grain {
+  background-image: repeating-linear-gradient(
+    0deg,
+    color-mix(in oklab, var(--shell-ink) 7%, transparent) 0 1px,
+    transparent 1px 3px
+  );
+  mix-blend-mode: multiply;
+  opacity: 0.45;
+}
+
+.hero-visual__frame {
+  box-shadow:
+    inset 0 0 0 1px var(--rule-soft),
+    inset 0 0 60px color-mix(in oklab, var(--shell-ink) 28%, transparent);
+  pointer-events: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero-visual__img {
+    mix-blend-mode: screen;
+    opacity: 0.85;
+  }
+
+  .hero-visual__grain {
+    mix-blend-mode: screen;
+    opacity: 0.18;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-visual__img,
+  .hero-visual__tint,
+  .hero-visual__grain {
+    transition: none !important;
+  }
+}
