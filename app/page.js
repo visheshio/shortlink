@@ -9,12 +9,13 @@ export default function Home() {
         <div className="flex flex-col items-start">
           <HeroWordmark />
           <div className="max-w-xl text-left mx-12">
-            <p className="text-[18px] font-semibold uppercase tracking-[0.28em] text-brass">
+            <p className="text-[18px] font-bold uppercase tracking-[0.28em] text-brass">
               The best shortener URL
             </p>
-            <p className="mt-3 text-[20px] leading-relaxed text-shell-muted">
+            <p className="mt-3 text-[20px] leading-relaxed text-shell-muted font-serif">
               We are the most straightforward URL shortener in the world.
             </p>
+            
           </div>
         </div>
 
