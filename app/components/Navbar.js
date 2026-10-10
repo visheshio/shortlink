@@ -6,7 +6,7 @@ import Link from "next/link";
 const NAV_ITEMS = [
   { label: "How to use", href: "/howtouse" },
   { label: "home", href: "/" },
-  { label: "Generate", href: "/generate" },
+  { label: "Generate", href: "/shorten" },
 ];
 
 /**
@@ -137,7 +137,7 @@ const Navbar = () => {
             <GitHubMark className="h-7 w-7" />
           </a>
           <Link
-            href="/"
+            href="/shorten"
             className="sl-rise hidden items-center gap-2 rounded-[3px] bg-brass px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.14em] text-[#16181c] transition-colors duration-200 hover:bg-brass-lit focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brass sm:inline-flex"
             style={{ animationDelay: "330ms" }}
           >
@@ -215,7 +215,7 @@ const Navbar = () => {
             </a>
             
             <Link
-              href="/generate"
+              href="/shorten"
               onClick={() => setOpen(false)}
               className="mt-5 flex items-center justify-center rounded-[3px] bg-brass px-4 py-3 text-[12px] font-semibold uppercase tracking-[0.14em] text-[#16181c] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brass sm:hidden"
             >
