@@ -28,7 +28,9 @@ const Shorten = () => {
       .then((result) => {
         seturl("");
         setshorturl("");
-        setgenerated(`${process.env.NEXT_PUBLIC_HOST}/${shorturl}`);
+        if (result.success) {
+          setgenerated(`${process.env.NEXT_PUBLIC_HOST}/${shorturl}`);
+        }
         alert(result.message);
       })
       .catch((error) => console.error(error));
@@ -62,6 +64,7 @@ const Shorten = () => {
           <input
             type="text"
             placeholder="Enter your URL"
+            value={url}
             onChange={(e) => {
               seturl(e.target.value);
             }}
@@ -70,6 +73,7 @@ const Shorten = () => {
           <input
             type="text"
             placeholder="Enter your Preffered Short URL text"
+            value={shorturl}
             onChange={(e) => {
               setshorturl(e.target.value);
             }}
@@ -93,7 +97,7 @@ const Shorten = () => {
             "repeating-linear-gradient(90deg, var(--rule) 0 1px, transparent 1px 9px)",
         }}
       />
-      <div className="mx-auto w-full max-w-3xl px-5 py-14 sm:px-8 sm:py-20 mt-[-100]">
+      <div className="mx-auto w-full max-w-3xl px-5 py-14 sm:px-8 sm:py-20 -mt-[100px]">
       {generated && <><span className="text-shell-ink font-bold text-lg">Your Shortened URL is:</span> <br />
       <code><Link href={generated} target="_blank" rel="noopener noreferrer">{generated}</Link></code></>}
       </div>
